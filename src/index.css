@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scroll::-moz-scrollbar-thumb {
+    background-color: #1e293b;
+    width: 0;
+}
+
+.no-scroll::-webkit-scrollbar-thumb {
+    background-color: #1e293b;
+    width: 0;
+}
+
+.no-scroll::-webkit-scrollbar-track {
+    width: 0;
+}
+
+.no-scroll::-moz-scrollbar-track {
+    width: 0;
+}
