@@ -1,6 +1,5 @@
-import Header from './components/index'
+import {Header, Footer} from './components/index'
 import { Outlet } from 'react-router-dom'
-import Footer from './components/index'
 
 
 function App() {

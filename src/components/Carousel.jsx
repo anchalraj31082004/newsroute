@@ -17,7 +17,7 @@ export default function Carousel() {
   }, []);
 
   const { articles } = useSelector((state) => state.article.article);
-  console.log(articles);
+  // console.log(articles);
 
   useEffect(() => {
     if (articles) {
