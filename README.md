@@ -29,9 +29,9 @@ NewsLok is a React-based News app that allows you to stay updated with the lates
 
 Follow these steps for set up and run the project loally:
 
-###Prerequisites
+### Prerequisites
 
--Node.js and npm installed on your machine.
+- Node.js and npm installed on your machine.
 - An API key from NewsAPI.
 
 ### Installation
