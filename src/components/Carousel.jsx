@@ -1,12 +1,12 @@
 import { Navigation, Pagination, Autoplay, Scrollbar, A11y } from "swiper/modules";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllNews } from "../store/articleSlice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllNews } from "../store/articleSlice";
 
 export default function Carousel() {
   const [carouselData, setCarouselData] = useState([]);

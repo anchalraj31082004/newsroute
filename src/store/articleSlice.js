@@ -19,30 +19,38 @@ const initialState = {
   healthArticles: [],
 };
 
-export const getAllNews = createAsyncThunk("getNews", async ({query, page}) => {
-  try {
-    const { data } = await axios.get(
-        `${apiConf.API_BASE_URL}/${apiConf.API_ENDPOINT.everything}?q=${query}&page=${page}&apiKey=${apiConf.API_KEY}`
+export const getAllNews = createAsyncThunk(
+  "getNews",
+  async ({ query = "all", page,language="en" }) => {
+    try {
+      const { data } = await axios.get(
+        `${apiConf.API_BASE_URL}/${apiConf.API_ENDPOINT.everything}?q=${query}&page=${page}&language=${language}&apiKey=${apiConf.API_KEY}`
       );
       return data;
-  } catch (error) {
-    console.error("Error in fetching EveryData:" , error)
-    throw error
+    } catch (error) {
+      console.error("Error in fetching EveryData:", error);
+      throw error;
+    }
   }
-});
+);
 
 export const getFilteredNews = createAsyncThunk(
   "getFiltered",
-  async ({ country = "in", category = "general", language = "en" }) => {
-   try {
-    const response = await axios.get(
-        `${apiConf.API_BASE_URL}/${apiConf.API_ENDPOINT.topHeadlines}?country=${country}&category=${category}&language=${language}&apiKey=${apiConf.API_KEY}`
+  async ({
+    query = "",
+    country = "in",
+    category = "general",
+    language = "en",
+  }) => {
+    try {
+      const response = await axios.get(
+        `${apiConf.API_BASE_URL}/${apiConf.API_ENDPOINT.topHeadlines}?q=${query}&country=${country}&category=${category}&language=${language}&apiKey=${apiConf.API_KEY}`
       );
       return { data: response?.data, category: category };
-   } catch (error) {
-    console.error("Error in fetching filterdData", error.response)
-    throw error
-   }
+    } catch (error) {
+      console.error("Error in fetching filterdData", error.response);
+      throw error;
+    }
   }
 );
 
@@ -61,7 +69,7 @@ const articleSlice = createSlice({
 
     builder.addCase(getAllNews.rejected, (state, action) => {
       state.loader = false;
-      console.error("Error fetching every data", action.error)
+      console.error("Error fetching every data", action.error);
     });
 
     //getFilteredNews or categoryNews
@@ -79,32 +87,39 @@ const articleSlice = createSlice({
         state.scienceArticles = action.payload.data;
       }
 
-      if(action.payload.category === "entertainment") {
-        state.entertainmentArticles = action.payload.data
+      if (action.payload.category === "entertainment") {
+        state.entertainmentArticles = action.payload.data;
       }
 
-      if(action.payload.category === "technology") {
-        state.technologyArticles = action.payload.data
+      if (action.payload.category === "technology") {
+        state.technologyArticles = action.payload.data;
       }
 
-      if(action.payload.category === "health") {
-        state.healthArticles = action.payload.data
+      if (action.payload.category === "health") {
+        state.healthArticles = action.payload.data;
       }
 
-      if(action.payload.category === "general") {
-        state.generalArticles = action.payload.data
+      if (action.payload.category === "general") {
+        state.generalArticles = action.payload.data;
       }
 
-      if(action.payload.category === "business") {
-        state.businessArticles = action.payload.data
+      if (action.payload.category === "business") {
+        state.businessArticles = action.payload.data;
       }
 
-      state.filteredLoader = false
+      state.filteredLoader = false;
     });
 
     builder.addCase(getFilteredNews.rejected, (state, action) => {
-      state.filteredLoader = false;
-      console.error("Error fetching filtered news:", action.error)
+      (state.sportsArticles = []),
+        (state.scienceArticles = []),
+        (state.entertainmentArticles = []),
+        (state.technologyArticles = []),
+        (state.healthArticles = []),
+        (state.generalArticles = []),
+        (state.businessArticles = []),
+        (state.filteredLoader = false);
+      console.error("Error fetching filtered news:", action.error);
     });
   },
 });
