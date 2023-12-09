@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { Provider } from "react-redux";
-import { store } from "./store/store.js";
+import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   FilteredNews,
@@ -11,6 +11,7 @@ import {
   AboutPage,
   ContactPage,
   Home,
+  Bookmark,
 } from "./components";
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path: "*",
         element: <ErrorPage404 />,
       },
+      {
+        path : "/bookmark",
+        element : <Bookmark/>
+      }
     ],
   },
 ]);

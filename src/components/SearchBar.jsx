@@ -13,7 +13,7 @@ function SearchBar({onSearch}) {
     <div className='flex '>
         <input
          type="text"
-         placeholder='Search here your choice'
+         placeholder='Search'
          value={query}
          onChange={(e) => setQuery(e.target.value)}
          className="border p-2 rounded-md w-32 md:w-56"

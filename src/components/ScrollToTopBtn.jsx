@@ -41,7 +41,7 @@ function ScrollToTopBtn({targetId}) {
           className={` p-4 bg-red-500 rounded-full`}
           title="top scroll"
         >
-          <FaArrowUp className="text-white text-2xl " />
+          <FaArrowUp className="text-white text-base md:text-lg lg:text-2xl " />
         </button>
       )}
     </div>

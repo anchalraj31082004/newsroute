@@ -64,14 +64,14 @@ function FilteredNews() {
   return loading ? (
     <div className="h-screen">loading...</div>
   ) : articles && articles.length > 0 ? (
-      <div className="mt-10 lg:mt-20 flex flex-col gap-5 lg:gap-10 w-full h-screen">
-        <div className="flex justify-between gap-12 items-center sticky top-0 z-10 bg-white pb-4">
+      <div className="md:mt-10 lg:mt-20 flex flex-col gap-5 lg:gap-10 w-full h-screen">
+        <div className="flex justify-between gap-12 items-center sticky top-0 z-10">
           <h1 className=" text-3xl pt-3 md:pt-1 md:text-4xl lg:text-5xl font-semibold text-center text-orange-500 ">
             {category.toUpperCase()}
           </h1>
           <SearchBar onSearch={handleSearch} />
         </div>
-        <ul id="scrollTop" className="flex flex-col gap-10 py-5 mb-12 md:px-5 overflow-auto h-full">
+        <ul id="scrollTop" className="flex flex-col gap-10 py-2 mb-12 md:px-5 overflow-auto h-full">
           {articles &&
             articles?.map((article, index) => (
               <NewsCard key={index} item={article} />
@@ -83,7 +83,7 @@ function FilteredNews() {
       </div>
   ) : (
     <div className="mt-10 lg:mt-20 flex flex-col gap-5 lg:gap-10 w-full">
-      <h1 className=" text-2xl md:text-3xl pt-3 md:pt-1 lg:text-5xl font-semibold text-center lg:text-start text-orange-500 sticky top-0 z-10 bg-white pb-4">
+      <h1 className=" text-2xl md:text-3xl pt-3 md:pt-1 lg:text-5xl font-semibold text-center lg:text-start text-orange-500 sticky top-0 z-10">
         loading....
       </h1>
       <div className="flex flex-col gap-10">

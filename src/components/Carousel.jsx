@@ -50,7 +50,7 @@ export default function Carousel() {
             <div className="absolute w-full h-full left-0 top-0 bg-gradient-to-b from-transparent to-black opacity-90 flex gap-10 lg:gap-20 justify-end items-end p-4">
               <div className="w-3/4 flex flex-col gap-2">
                 <h3 className="font-bold text-xl md:text-2xl lg:text-3xl  text-orange-600">{data?.title}</h3>
-                <p className="lg:text-lg md:text-sm text-xs">{data?.description.slice(0,120)}</p>
+                <p className="lg:text-lg md:text-sm text-xs">{data?.content.slice(0,120)}</p>
               </div>
               <div className="w-1/4">
                 <p className="md:text-sm text-xs"><span className="text-teal-500 text-sm lg:text-base  font-medium">Source : </span>{data.source.name}</p>

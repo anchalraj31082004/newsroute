@@ -12,6 +12,7 @@ import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import LocalTimeFormat from "../utils/LocalTimeFormat";
 import ScrollToTopBtn from "./ScrollToTopBtn";
+import Bookmark from "../pages/Bookmark";
 
 export {
   Header,
@@ -27,5 +28,6 @@ export {
   AboutPage,
   ContactPage,
   LocalTimeFormat,
-  ScrollToTopBtn
+  ScrollToTopBtn,
+  Bookmark
 };
