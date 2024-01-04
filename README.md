@@ -4,6 +4,8 @@ NewsLok is a React-based News app that allows you to stay updated with the lates
 
 ## Features
 
+![Home page](./src/assets/1-NRHome.png)
+
 ### 1. Fetching News
 
 - Integration with a news API to fetch the latest news articles.
@@ -23,7 +25,7 @@ NewsLok is a React-based News app that allows you to stay updated with the lates
 ### 4. Search Functionality
 
 - Integration of a search bar for users to find specific news articles.
-- Advanced search options, such as filtering by language or category.
+- Filtering options of major categories(sports, business, technology etc).
 
 ## Getting Started
 
@@ -69,3 +71,35 @@ Follow these steps for set up and run the project loally:
     ```
 
 6. Open your browser and visit http://localhost:5173 to view the app.   
+
+### Extra screenshots
+
+![Main News](./src/assets/2-NR-Home.png)
+
+![Sports News](./src/assets/3-Sports.png)
+
+![Bookmarks](./src/assets/4-Bookmarks.png)
+
+
+# Deployment Considerations
+
+## NewsAPI.org Limitations
+
+Newsroute relies on the NewsAPI.org service to fetch real-time news data.
+However, please note that the NewsAPI.org free tier is intended for development purposes only.
+Additionally, CORS (Cross-Origin Resource Sharing) is only enabled for localhost in the free tier.
+
+## Deploying to Production
+
+To deploy NewsRoute to a production environment, you'll need to upgrade to a paid plan on NewsAPI.org to remove development restrictions and enable CORS for your production domain.
+
+1. **Upgrade NewsAPI.org Plan:**
+   Visit [NewsAPI.org Pricing](https://newsapi.org/pricing) and choose a plan that suits your application's needs. Follow the instructions to upgrade your account.
+
+2. **Configure CORS:**
+   After upgrading, configure CORS settings on NewsAPI.org to allow requests from your production domain. This ensures that your deployed app can fetch news data successfully.
+
+3. **Update API Key:**
+   Replace the NewsAPI.org API key in your app with the new key associated with your upgraded plan.
+
+## That is why I didn't deployed, you set it up in localhost or you can deploy it for your own experience.
