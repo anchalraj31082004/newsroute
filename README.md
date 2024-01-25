@@ -2,9 +2,9 @@
 
 NewsLok is a React-based News app that allows you to stay updated with the latest news articles. It comes with various features to enhance your news reading experience.
 
-## Features
-
 ![Home page](./src/assets/1-NRHome.png)
+
+## Features
 
 ### 1. Fetching News
 
@@ -103,3 +103,6 @@ To deploy NewsRoute to a production environment, you'll need to upgrade to a pai
    Replace the NewsAPI.org API key in your app with the new key associated with your upgraded plan.
 
 ## That is why I didn't deployed, you set it up in localhost or you can deploy it for your own experience.
+
+## Demo video
+https://github.com/anchalraj31082004/newsroute/assets/126651793/d95f9cc3-26a5-4c21-8525-66984bb48206
