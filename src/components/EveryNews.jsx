@@ -87,7 +87,7 @@ function EveryNews() {
     "
     >
       <div className="flex justify-between md:gap-12 items-center sticky top-0 z-10 ">
-        <h1 className=" text-3xl pt-3 md:pt-1 md:text-4xl lg:text-5xl font-semibold text-center text-orange-500 ">
+        <h1 className=" text-3xl pt-3 md:pt-1 md:text-4xl lg:text-5xl font-semibold text-center text-orange-500 cursor-pointer ">
           Everything
         </h1>
         <SearchBar onSearch={handleSearch} />

@@ -64,7 +64,7 @@ function FilteredNews() {
   return loading ? (
     <div className="h-screen">loading...</div>
   ) : articles && articles.length > 0 ? (
-      <div className="md:mt-10 lg:mt-20 flex flex-col gap-5 lg:gap-10 w-full h-screen">
+      <div className="md:mt-10 lg:mt-20 flex flex-col gap-5 lg:gap-10 w-full h-screen cursor-pointer">
         <div className="flex justify-between gap-12 items-center sticky top-0 z-10">
           <h1 className=" text-3xl pt-3 md:pt-1 md:text-4xl lg:text-5xl font-semibold text-center text-orange-500 ">
             {category.toUpperCase()}

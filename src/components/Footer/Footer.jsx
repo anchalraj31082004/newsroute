@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 const Footer = ({className}) => {
   return (
-    <footer className={`relative overflow-hidden py-10 bg-teal-900/50 rounded-lg backdrop-filter backdrop-blur-md shadow-black shadow-2xl h-80 ${className} text-white flex items-center w-full px-20 mx-auto justify-between h-96 bg-slate-950/50 shadow-black shadow-inner backdrop-filter backdrop-blur-xl`}>
-      <Link to='/' className=' p-3 rounded-lg shadow-black shadow-2xl'>
+    <footer className={`relative overflow-hidden py-10 bg-teal-900/50 rounded-lg backdrop-filter backdrop-blur-md shadow-black shadow-2xl ${className} text-white flex flex-col lg:flex-row items-center w-full md:px-20 mx-auto justify-between h-96 bg-slate-950/50 shadow-black shadow-inner backdrop-filter backdrop-blur-xl`}>
+      <Link to='/' className=' p-3 rounded-lg shadow-black shadow-md'>
         <h1 className='text-5xl font-bold font-serif text-orange-500 active:text-orange-700'>
           News Route
         </h1>
       </Link>
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-col gap-2 md:gap-5'>
         <div id='contact' className='flex items-center gap-5'>
           <span className='tracking-wider font-sans'>Wanna chit-chat ?</span>
           <Link
@@ -32,7 +32,7 @@ const Footer = ({className}) => {
           </Link>
         </div>
       </div>
-      <div id='socials' className='flex flex-col gap-5 items-center'>
+      <div id='socials' className='flex flex-col gap-2 md:gap-5 items-center'>
         <div>
           <h1 className="text-orange-500 font-bold tracking-widest">Socials</h1>
         </div>

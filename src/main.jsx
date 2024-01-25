@@ -28,11 +28,11 @@ const router = createBrowserRouter([
         element: <FilteredNews />,
       },
       {
-        path: "/about",
+        path: "/about-us",
         element: <AboutPage />,
       },
       {
-        path: "/contact",
+        path: "/contact-us",
         element: <ContactPage />,
       },
       {

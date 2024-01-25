@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBookBookmark } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
@@ -77,7 +77,7 @@ function Header() {
         </div>
       </nav>
       <div className="flex relative items-center justify-between w-full px-5 py-2">
-        <div className=" text-2xl text-orange-600 hidden md:block">News Route</div>
+        <Link to={"/"} className=" text-2xl cursor-pointer text-orange-600 block">News Route</Link>
         <div>
           {bookmark.length > 0 ? (
             <NavLink to="/bookmark" className={({ isActive }) =>

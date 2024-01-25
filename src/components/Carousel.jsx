@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const [carouselData, setCarouselData] = useState([]);
@@ -45,11 +46,16 @@ export default function Carousel() {
             <img
               className="lg:h-80 h-64 w-full object-cover rounded-3xl"
               src={data?.urlToImage}
-              alt={`Slide ${index + 1}`}
             />
-            <div className="absolute w-full h-full left-0 top-0 bg-gradient-to-b from-transparent to-black opacity-90 flex gap-10 lg:gap-20 justify-end items-end p-4">
+            <div className="absolute w-full h-full left-0 cursor-pointer top-0 bg-gradient-to-b from-transparent to-black opacity-90 flex gap-10 lg:gap-20 justify-end items-end p-4">
               <div className="w-3/4 flex flex-col gap-2">
-                <h3 className="font-bold text-xl md:text-2xl lg:text-3xl  text-orange-600">{data?.title}</h3>
+                <Link
+                 to={data.url} 
+                 target="_blank"
+                 className="font-bold text-xl md:text-2xl lg:text-3xl  text-orange-600 hover:text-orange-700 transition-all ease-in-out duration-100"
+                 >
+                  {data?.title}
+                </Link>
                 <p className="lg:text-lg md:text-sm text-xs">{data?.content.slice(0,120)}</p>
               </div>
               <div className="w-1/4">

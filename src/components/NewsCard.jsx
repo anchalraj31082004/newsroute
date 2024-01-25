@@ -29,14 +29,19 @@ function NewsCard({ item }) {
 
 
   return (
-    <div className="flex flex-col lg:flex-row p-5 gap-3 lg:gap-10 rounded-3xl bg-teal-950 text-white">
+    <div className="flex flex-col lg:flex-row p-5 gap-3 lg:gap-10 rounded-3xl bg-teal-950 text-white cursor-pointer">
       <img
-        className="object-cover object-center w-full lg:w-[350px] h-[200px] flex m-auto md:h-[250px] rounded-3xl"
+        className="object-cover object-center w-full h-[200px] flex m-auto md:h-[250px] rounded-3xl"
         src={item?.urlToImage}
-        alt={`image here`}
       />
       <div className="flex flex-col gap-3">
-        <h2 className="text-xl md:text-2xl font-bold">{item?.title}</h2>
+        <Link 
+          target="_blank"
+          to={item?.url}
+          className="text-xl text-sky-700 hover:text-sky-800 transition-all ease-in-out duration-100 md:text-2xl font-bold"
+          >
+            {item?.title}
+        </Link>
         <p className="text-xs md:text-base">
           {item?.description?.slice(0, 150)}...
         </p>
